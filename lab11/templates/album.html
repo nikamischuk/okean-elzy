@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Альбоми
+{% endblock %}
+
+
+{% block body %}
+    <div class="album py-5 bg-secondary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                {% for album in albums %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{{ url_for('static', filename='uploads/' + album.image) }}"
+                                 class="bd-placeholder-img card-img-top"
+                                 style="background-size: cover; width: 100%; height: 320px">
+
+                            <div class="card-body">
+                                <p class="card-text text-center fw-bold h5">{{ album.title }}</p>
+                                <p class="card-text text-center"><em>{{ album.year }}</em></p>
+                            </div>
+
+                            {% if 'user' in session %}
+                                <div class="d-flex flex-column btn-group text-center">
+                                    <a href="/album_update/{{ album.id }}"
+                                       class="btn fw-bold btn-sm btn-primary mb-1 mx-5 py-2 rounded">Edit</a>
+                                <a href="/album_delete/{{ album.id }}"
+                                       class="btn fw-bold btn-sm btn-danger mb-3 mx-5 py-2 rounded">Delete</a>
+                                </div>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

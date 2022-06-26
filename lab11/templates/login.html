@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Авторизація
+{% endblock %}
+
+
+{% block body %}
+<main class="form-signin text-center d-flex justify-content-center align-items-center" style="height: calc(100vh - 143.91px)">
+    <form method="post" style="width: 400px">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+</main>
+
+{% endblock %}

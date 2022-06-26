@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Новий альбом
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container col-6 col-xl-5 col-lg-5 col-md-9 col-sm-9 d-flex align-items-center justify-content-center" style="height: calc(100vh - (143.91px))">
+        <br>
+        <form method="post" enctype="multipart/form-data" class="w-100">
+            <div class="form-group">
+                <label for="exampleInputEmail1"><b>Назва альбому</b></label>
+                <input name="album_title" type="text" class="form-control" id="exampleInputEmail1"
+                       aria-describedby="emailHelp">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputPassword1"><b>Рік альбому</b></label>
+                <input name="album_year" type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="file"><b>Світлина-логотип альбому</b></label>
+                <input name="file" type="file" class="form-control" id="file">
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-success"><b>Створити</b></button>
+        </form>
+        <br>
+    </div>
+
+{% endblock %}
